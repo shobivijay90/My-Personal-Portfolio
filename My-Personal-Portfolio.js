@@ -1,15 +1,24 @@
-
 document.addEventListener("DOMContentLoaded", function(){
 
-var svLogo = document.getElementById("svlogo");
-svLogo.addEventListener("mouseover",function(){
-this.style="box-shadow: 3px 3px 3px steelblue";
-this.style.width= "85px";
-this.style.height = "85px";
+/*SV logo event listener*/
+
+$(document).ready(function(){
+ 
+  $("#svlogo").mouseover(function(){
+    $(this).css("box-shadow", "3px 3px 3px steelblue");
+    $(this).css("width", "85px");
+$(this).css("height", "85px");
 });
-svLogo.addEventListener("mouseout",function(){
-this.style="";
+  
+   $("#svlogo").mouseout(function(){
+  $(this).css("box-shadow", "");
+    $(this).css("width", "");
+$(this).css("height", "");
+   });
+  
 });
+
+/*navigation links event listener*/
 
 var navBar= document.getElementById("list").getElementsByTagName("a");
 for(i=0; i<navBar.length; i++){
@@ -22,6 +31,8 @@ for(i=0; i<navBar.length; i++){
     this.style="";
   });
 }
+
+/*Profile picture event listener*/
 
 var profPic = document.getElementById("my-img");
 profPic.addEventListener("mouseover",function(){
@@ -42,6 +53,8 @@ for(var j=0; j<proj.length; j++){
    });
 }
 
+/*buttons  event listener*/
+
 var btn= document.getElementById("showall");
 btn.addEventListener("mouseover",function(){
   this.style="box-shadow: 5px 5px 5px black";
@@ -49,6 +62,11 @@ btn.addEventListener("mouseover",function(){
 btn.addEventListener("mouseout",function(){
   this.style="";
 });
+btn.addEventListener("click", function(){
+  window.open("https://codepen.io/shobivijay90/");
+});
+
+/*contact logo event listener*/
 
 var con= document.getElementById("logo-contact").getElementsByTagName("img");
 for(var a=0; a<con.length; a++){
@@ -60,6 +78,8 @@ con[a].addEventListener("mouseout", function(){
 });
 }
 
+
 });
+
 
 
