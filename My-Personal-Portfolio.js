@@ -1,34 +1,51 @@
+
 document.addEventListener("DOMContentLoaded", function(){
 
-/*SV logo event listener*/
-
 $(document).ready(function(){
+  
+  /*SV logo event listener*/
+  
+  let svlogo_mouseover = {
+    boxShadow: "3px 3px 3px steelblue",
+    width: "85px",
+    height: "85px"
+  };
+  
+   let svlogo_mouseout = {
+    boxShadow: "",
+    width: "",
+    height: ""
+  };
  
   $("#svlogo").mouseover(function(){
-    $(this).css("box-shadow", "3px 3px 3px steelblue");
-    $(this).css("width", "85px");
-$(this).css("height", "85px");
+    $(this).css(svlogo_mouseover);
 });
   
    $("#svlogo").mouseout(function(){
-  $(this).css("box-shadow", "");
-    $(this).css("width", "");
-$(this).css("height", "");
+  $(this).css(svlogo_mouseout);
    });
   
-});
-
 /*navigation links event listener*/
 
-var navBar= document.getElementById("list").getElementsByTagName("a");
+  let navBar_mouseover =  {
+     boxShadow: "0 0 20px steelblue",
+    padding: "5px 5px",
+    borderRadius:"5px" 
+  };
+   let navBar_mouseout =  {
+     boxShadow: "",
+    padding: "",
+    borderRadius:"" 
+  };
+  
+var navBar= $("ul li a"); 
 for(i=0; i<navBar.length; i++){
+  
   navBar[i].addEventListener("mouseover",function(){
- this.style="box-shadow: 0 0 20px steelblue";
-    this.style.padding = "5px 5px";
-    this.style.borderRadius = "5px";   
+        $(this).css(navBar_mouseover);
   });
     navBar[i].addEventListener("mouseout",function(){
-    this.style="";
+         $(this).css(navBar_mouseout);
   });
 }
 
@@ -42,6 +59,8 @@ profPic.addEventListener("mouseout", function(){
   this.style="";
 });
 
+  /*Projects  event listener*/
+  
 var proj= document.getElementById("projects").getElementsByTagName("img");
 for(var j=0; j<proj.length; j++){
   proj[j].addEventListener("mouseover",function(){
@@ -78,8 +97,6 @@ con[a].addEventListener("mouseout", function(){
 });
 }
 
-
-});
-
-
-
+  });
+  });
+  
